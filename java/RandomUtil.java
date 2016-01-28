@@ -14,9 +14,9 @@ public class RandomUtil {
 	/**
 	 * 最大的优点是基于random.org网站api，生成的是真随机数，不是random函数生成的伪随机数
 	 * 缺点是也是基于random.org网站api，需要联网，而且不是很快。
-	 * @param min最小值
-	 * @param max最大值
-	 * @param num生成随机数个数
+	 * @param min  最小值
+	 * @param max  最大值
+	 * @param num  生成随机数个数
 	 * @return
 	 */
 	public StringBuilder getRandom(String min, String max, String num){
