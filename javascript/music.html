@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+    </div>
+    <script type="text/javascript">
+    $.ajax({
+        url: "http://oto.yirunit.com:8080/ghss/apptel/phonelogin.html?name=remainer&pwd=123456",
+        type: "GET",
+        dataType: "jsonp", //change it by the data type you get (XML...)
+        callback: "callback",
+        context: document.body,
+        statusCode: {
+            404: function() {
+                console.log("-1-1-1-1 WE GOT 404!");
+            },
+            200: function() {
+                var html = '';
+                html += '<audio controls="controls" height="100" width="100" autoplay>'
+                html += '<source src="button.mp3" type="audio/mp3" />'
+                html += '</audio>'
+                $('body').append(html);
+            }
+        },
+        success: function() {
+            // $('body').append('<embed src="button.wav" autostart="true" hidden="true" loop="true">');
+        },
+        error: function(e) {
+            // var html = '';
+            // html += '<audio controls="controls" height="100" width="100" autoplay>'
+            // html += '<source src="button.mp3" type="audio/mp3" />'
+            // html += '</audio>'
+            // $('body').append(html);
+            // alert(e);
+        }
+    });
+    </script>
+</body>
+
+</html>
